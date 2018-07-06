@@ -7,8 +7,8 @@
     <ProjectGuid>{94EDD9BD-C2C4-4A91-807A-4C6401F6A3B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Contato.Dominio</RootNamespace>
-    <AssemblyName>Contato.Dominio</AssemblyName>
+    <RootNamespace>Agenda.Dominio</RootNamespace>
+    <AssemblyName>Agenda.Dominio</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -111,12 +111,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Contato.cs" />
+    <Compile Include="ValoresDeObjetos\Contato.cs" />
     <Compile Include="Enum\EContatoTipo.cs" />
     <Compile Include="Enum\EEnderecoTipo.cs" />
-    <Compile Include="Entidades\Endereco.cs" />
-    <Compile Include="Interfaces\Repositorios\IContextoBanco.cs" />
-    <Compile Include="ValoresDeObjetos\MarcadorContato.cs" />
+    <Compile Include="ValoresDeObjetos\Endereco.cs" />
+    <Compile Include="Entidades\MarcadorContato.cs" />
     <Compile Include="Entidades\Pessoa.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioDePessoas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

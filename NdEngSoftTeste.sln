@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.0 NdEngSoft.Infra", "3.0 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.0 NdEngSoft.UI", "1.0 NdEngSoft.UI", "{4106DB5A-F0EA-4A81-8B6A-E65C2CC33ED8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contato.Dominio", "Contato.Dominio\Contato.Dominio.csproj", "{94EDD9BD-C2C4-4A91-807A-4C6401F6A3B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.Dominio", "Contato.Dominio\Agenda.Dominio.csproj", "{94EDD9BD-C2C4-4A91-807A-4C6401F6A3B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 NdEngSoft.Shared", "2.1 NdEngSoft.Shared", "{F7F673B4-2B7B-4F36-9EC9-1B5F72AA28D6}"
 EndProject
@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NdEngSoft.InfraMongo", "NdE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 NdEngSof.Api", "1.1 NdEngSof.Api", "{376AC943-7B49-465E-9697-D164F7968F09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contatos.Api", "Contatos.Api\Contatos.Api.csproj", "{B07E5BC1-6D2F-42EE-B252-E4272288BF3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.Api", "Contatos.Api\Agenda.Api.csproj", "{B07E5BC1-6D2F-42EE-B252-E4272288BF3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contatos.AspNet", "Contatos.AspNet\Contatos.AspNet.csproj", "{C93E0BD6-55BE-4C86-A809-5F2AA370D5E5}"
 EndProject

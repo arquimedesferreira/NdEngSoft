@@ -1,15 +1,15 @@
-﻿using Contato.Dominio.Entidades;
-using Contato.Dominio.Interfaces.Repositorios;
+﻿using Agenda.Dominio.Entidades;
+using Agenda.Dominio.Interfaces.Repositorios;
 using MongoDB.Driver;
 
 namespace NdEngSoft.InfraMongo.Contexto
 {
-    public class MongoContexto:IContextoBanco
+    public class MongoContexto
     {
         public const string STRING_DE_CONEXAO = "mongodb://localhost:27017";
-        public const string NOME_DA_BASE = "testeAgenda";
-        public const string COLECAO_MOTIVOS = "Contatos";
-        public const string COLECAO_ACESSOS = "Acessos";
+        public const string NOME_DA_BASE = "agendaTeste";
+        public const string COLECAO_MOTIVOS = "Agenda";
+        public const string COLECAO_ACESSOS = "MarcadoresContato";
 
         private static readonly IMongoClient _cliente;
         private static readonly IMongoDatabase _BaseDeDados;
@@ -33,9 +33,9 @@ namespace NdEngSoft.InfraMongo.Contexto
             get { return _BaseDeDados.GetCollection<Pessoa>(COLECAO_MOTIVOS); }
         }
 
-        //public IMongoCollection<AcessosRecepcao> Acessos
-        //{
-        //    get { return _BaseDeDados.GetCollection<AcessosRecepcao>(COLECAO_ACESSOS); }
-        //}
+        public IMongoCollection<MarcadorContato> MarcadoresContato
+        {
+            get { return _BaseDeDados.GetCollection<MarcadorContato>(COLECAO_ACESSOS); }
+        }
     }
 }

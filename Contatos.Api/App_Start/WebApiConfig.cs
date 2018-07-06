@@ -11,9 +11,10 @@ namespace Contatos.Api
         {
             // Serviços e configuração da API da Web
 
+            config.EnableCors();
             // Rotas da API da Web
             config.MapHttpAttributeRoutes();
-
+            // Rotas da API da Web
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

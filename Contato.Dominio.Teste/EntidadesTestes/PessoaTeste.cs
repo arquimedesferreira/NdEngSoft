@@ -1,7 +1,7 @@
 ﻿using System;
-using Contato.Dominio.Entidades;
-using Contato.Dominio.Enum;
-using Contato.Dominio.ValoresDeObjetos;
+using Agenda.Dominio.Entidades;
+using Agenda.Dominio.Enum;
+using Agenda.Dominio.ValoresDeObjetos;
 using Flunt.Notifications;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,8 +33,8 @@ namespace Contato.Dominio.Teste
             CriaUmaPessoa();
             var endereco = new Endereco("rua das almacias");
 
-            var contato = new Entidades.Contato(EContatoTipo.CELULAR,"testando");
-            var contato1 = new Entidades.Contato(EContatoTipo.CELULAR,"testando");
+            var contato = new Contato(EContatoTipo.CELULAR,"testando");
+            var contato1 = new Contato(EContatoTipo.CELULAR,"testando");
 
             _pessoa.Adiciona(contato);
             _pessoa.Adiciona(contato1);
@@ -44,5 +44,20 @@ namespace Contato.Dominio.Teste
             Assert.IsTrue(tamanho_da_lista.Count != 0);
         }
 
+
+        [TestMethod]
+        public void TestaAdicionarUmEndereco()
+        {
+            CriaUmaPessoa();
+            var endereco = new Endereco("rua das almacias");
+            var endereco1 = new Endereco("rua das almacias");
+            
+            _pessoa.Adiciona(endereco);
+            _pessoa.Adiciona(endereco1);
+            var tamanho_da_lista = _pessoa.Enderecos;
+            Console.Write("Teste" + tamanho_da_lista.Count);
+
+            Assert.IsTrue(tamanho_da_lista.Count != 0);
+        }
     }
 }

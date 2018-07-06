@@ -1,19 +1,17 @@
-﻿using Flunt.Validations;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using NdEngSoft.Shared.ValoresObjeto;
 using System;
 
-namespace Contato.Dominio.Entidades
+namespace Agenda.Dominio.Entidades
 {
-    public class MarcadorContato: ValorObjeto
+    public class MarcadorContato
     {
         public MarcadorContato(string nome)
         {
             this.Nome = nome;
-            AddNotifications(new Contract()
-                    .Requires()
-                    .HasMinLen(Nome, 3, "Macador.Contato", "O campo nome não pode ter menos que ,três caracteres"));
         }
 
         [BsonRepresentation(BsonType.ObjectId)]
@@ -28,7 +26,7 @@ namespace Contato.Dominio.Entidades
             }
             else
             {
-                new Exception("Nome do Tipo de Contato não pode ser vazio!");
+                this.Nome = "Erro!Ser em Branco";
             }
         }
         

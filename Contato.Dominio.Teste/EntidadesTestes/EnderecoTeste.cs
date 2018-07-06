@@ -1,6 +1,4 @@
-﻿using System;
-using Contato.Dominio.Entidades;
-using Contato.Dominio.Enum;
+﻿using Agenda.Dominio.ValoresDeObjetos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Contato.Dominio.Teste.EntidadesTestes

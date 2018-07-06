@@ -1,5 +1,7 @@
 ﻿using System;
-using Contato.Dominio.Enum;
+using Agenda.Dominio.Enum;
+using Agenda.Dominio.Entidades;
+using Agenda.Dominio.ValoresDeObjetos;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Contato.Dominio.Teste.EntidadesTestes
@@ -12,14 +14,14 @@ namespace Contato.Dominio.Teste.EntidadesTestes
         [TestMethod]
         public void TestaSeContatoPodeSerTipoNullo()
         {
-            var contato = new Entidades.Contato(EContatoTipo.CELULAR, "12312312");
+            var contato = new Contato(EContatoTipo.CELULAR, "12312312");
             Assert.IsTrue(contato.Valid);
         }
 
         [TestMethod]
         public void TesteSeContatoPodeTerValorVazio()
         {
-           var contato = new Entidades.Contato(EContatoTipo.EMAIL, "");
+           var contato = new Contato(EContatoTipo.EMAIL, "");
            Assert.IsFalse(contato.Valid);
         }
     }

@@ -118,9 +118,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contato.Dominio\Contato.Dominio.csproj">
+    <ProjectReference Include="..\Contato.Dominio\Agenda.Dominio.csproj">
       <Project>{94EDD9BD-C2C4-4A91-807A-4C6401F6A3B8}</Project>
-      <Name>Contato.Dominio</Name>
+      <Name>Agenda.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NdEngSoft.InfraMongo\NdEngSoft.InfraMongo.csproj">
+      <Project>{03199A6D-0D59-42E2-A4D2-9C3946720592}</Project>
+      <Name>NdEngSoft.InfraMongo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
