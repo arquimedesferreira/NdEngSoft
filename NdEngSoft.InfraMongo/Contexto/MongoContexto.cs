@@ -1,5 +1,4 @@
-﻿using Agenda.Dominio.Entidades;
-using Agenda.Dominio.Interfaces.Repositorios;
+﻿using Agenda.Domain.Entity;
 using MongoDB.Driver;
 
 namespace NdEngSoft.InfraMongo.Contexto
@@ -28,14 +27,14 @@ namespace NdEngSoft.InfraMongo.Contexto
             get { return _cliente; }
         }
 
-        public IMongoCollection<Pessoa> Pessoas
+        public IMongoCollection<Person> Pessoas
         {
-            get { return _BaseDeDados.GetCollection<Pessoa>(COLECAO_MOTIVOS); }
+            get { return _BaseDeDados.GetCollection<Person>(COLECAO_MOTIVOS); }
         }
 
-        public IMongoCollection<MarcadorContato> MarcadoresContato
+        public IMongoCollection<ContactMarker> MarcadoresContato
         {
-            get { return _BaseDeDados.GetCollection<MarcadorContato>(COLECAO_ACESSOS); }
+            get { return _BaseDeDados.GetCollection<ContactMarker>(COLECAO_ACESSOS); }
         }
     }
 }

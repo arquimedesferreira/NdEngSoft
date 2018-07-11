@@ -12,7 +12,7 @@ namespace Agenda.Domain.Interface.Repository
         Task<Person> SearchForName(string primerName);
         Task<Person> SearchForId(string id);
         Task<IList<Person>> SearchAll();
-        Task Remover(Person person);
-        Task Adicionar(Person person);
+        Task Remove(Person person);
+        Task Add(Person person);
     }
 }

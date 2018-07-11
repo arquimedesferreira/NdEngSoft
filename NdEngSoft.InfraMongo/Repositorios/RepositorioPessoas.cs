@@ -1,5 +1,5 @@
-﻿using Agenda.Dominio.Entidades;
-using Agenda.Dominio.Interfaces.Repositorios;
+﻿using Agenda.Domain.Entity;
+using Agenda.Domain.Interface.Repository;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using NdEngSoft.InfraMongo.Contexto;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace NdEngSoft.InfraMongo.Repositorios
 {
-    public class RepositorioPessoas : IRepositorioDePessoas
+    public class RepositorioPessoas : IRepositoryPerson
     {
         private MongoContexto _contextoBanco;
 
@@ -22,7 +22,7 @@ namespace NdEngSoft.InfraMongo.Repositorios
         }
 
 
-        public async Task Adicionar(Pessoa pessoa)
+        public async Task Add(Person pessoa)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace NdEngSoft.InfraMongo.Repositorios
                 var ee = e;
             }
         }
-        public async Task<IList<Pessoa>> BuscarTodas()
+        public async Task<IList<Person>> SearchAll()
         {
             try
             {
@@ -46,12 +46,12 @@ namespace NdEngSoft.InfraMongo.Repositorios
             }
         }
 
-        public async Task<Pessoa> BuscarPorNome(string primeirNome)
+        public async Task<Person> SearchForName(string primeirNome)
         {
             try
             {
-                var construtor = Builders<Pessoa>.Filter;
-                var filtro = construtor.Eq(x => x.Nome.PrimeiroNome, primeirNome);
+                var construtor = Builders<Person>.Filter;
+                var filtro = construtor.Eq(x => x.Name.FisrtName, primeirNome);
                 return await _contextoBanco.Pessoas.Find(filtro).FirstOrDefaultAsync();
             }
             catch (Exception e)
@@ -60,11 +60,11 @@ namespace NdEngSoft.InfraMongo.Repositorios
                 return null;
             }
         }
-        public async Task<Pessoa> BuscarPorId(string id)
+        public async Task<Person> SearchForId(string id)
         {
             try
             {
-                var construtor = Builders<Pessoa>.Filter;
+                var construtor = Builders<Person>.Filter;
                 var filtro = construtor.Eq(x => x.Id, id);
                 return await _contextoBanco.Pessoas.Find(filtro).FirstOrDefaultAsync();
             }
@@ -75,11 +75,11 @@ namespace NdEngSoft.InfraMongo.Repositorios
             }
         }
 
-        public async Task Remover(Pessoa pessoa)
+        public async Task Remove(Person pessoa)
         {
             try
             {
-                var construtor = Builders<Pessoa>.Filter;
+                var construtor = Builders<Person>.Filter;
                 var filtro = construtor.Eq(x => x.Id, pessoa.Id);
                 await _contextoBanco.Pessoas.DeleteOneAsync(filtro);
             }
@@ -89,11 +89,11 @@ namespace NdEngSoft.InfraMongo.Repositorios
             }
         }
 
-        public async void Atualizar(Pessoa pessoa)
+        public async void Update(Person pessoa)
         {
             try
             {
-                var construtor = Builders<Pessoa>.Filter;
+                var construtor = Builders<Person>.Filter;
                 var filtro = construtor.Eq(x => x.Id, pessoa.Id);
                 await _contextoBanco.Pessoas.ReplaceOneAsync(filtro, pessoa);
             }
