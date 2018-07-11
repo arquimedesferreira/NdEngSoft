@@ -6,5 +6,11 @@ namespace Agenda.Domain.Enum
 {
     public enum EContactType
     {
+        CELULAR,
+        TELEFONE_RESIDENCIAL,
+        TELEFONE_COMERCIAL,
+        EMAIL,
+        IM,
+        SITE
     }
 }

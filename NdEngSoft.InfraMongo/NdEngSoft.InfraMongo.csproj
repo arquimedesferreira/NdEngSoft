@@ -63,12 +63,6 @@
     <Compile Include="Repositorios\RepositorioPessoas.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contato.Dominio\Agenda.Dominio.csproj">
-      <Project>{94EDD9BD-C2C4-4A91-807A-4C6401F6A3B8}</Project>
-      <Name>Agenda.Dominio</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>

@@ -168,10 +168,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Contato.Dominio\Agenda.Dominio.csproj">
-      <Project>{94edd9bd-c2c4-4a91-807a-4c6401f6a3b8}</Project>
-      <Name>Agenda.Dominio</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NdEngSoft.InfraMongo\NdEngSoft.InfraMongo.csproj">
       <Project>{03199a6d-0d59-42e2-a4d2-9c3946720592}</Project>
       <Name>NdEngSoft.InfraMongo</Name>

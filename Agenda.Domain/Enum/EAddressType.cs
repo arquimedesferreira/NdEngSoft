@@ -6,5 +6,7 @@ namespace Agenda.Domain.Enum
 {
     public enum EAddressType
     {
+        COMERCIAL,
+        RESIDENCIAL
     }
 }
