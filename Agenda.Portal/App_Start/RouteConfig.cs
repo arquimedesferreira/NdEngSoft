@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Contatos.AspNet
+namespace Agenda.Portal
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace Contatos.AspNet
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Pessoa", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Home", id = UrlParameter.Optional }
             );
         }
     }

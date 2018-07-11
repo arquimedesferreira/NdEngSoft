@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Contatos.AspNet.Controllers
+namespace Agenda.Portal.Controllers
 {
-    public class PessoaController : Controller
+    public class HomeController : Controller
     {
-        // GET: Pessoa
+        // GET: Home
         public ActionResult Index()
         {
             return View();

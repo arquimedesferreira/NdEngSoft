@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // As Informações Gerais sobre um assembly são controladas por meio do 
 // conjunto de atributos a seguir. Altere esses valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("Contatos.AspNet")]
+[assembly: AssemblyTitle("Agenda.Portal")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Contatos.AspNet")]
+[assembly: AssemblyProduct("Agenda.Portal")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // A GUID a seguir será referente à ID do typelib se este projeto for exposto ao COM
-[assembly: Guid("c93e0bd6-55be-4c86-a809-5f2aa370d5e5")]
+[assembly: Guid("0b6ee4a9-1a7e-48bc-b32a-67f4edb1acba")]
 
 // As informações de versão de um assembly consistem nos quatro valores a seguir:
 //
