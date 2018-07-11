@@ -10,7 +10,8 @@ namespace Agenda.Dominio.Interfaces.Repositorios
     public interface IRepositorioDePessoas
     {
         void Atualizar(Pessoa pessoa);
-        Task<Pessoa> Buscar(string primeirNome);
+        Task<Pessoa> BuscarPorNome(string primeirNome);
+        Task<Pessoa> BuscarPorId(string id);
         Task<IList<Pessoa>> BuscarTodas();
         Task Remover(Pessoa pessoa);
         Task Adicionar(Pessoa pessoa);

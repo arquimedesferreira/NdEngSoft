@@ -33,7 +33,20 @@ namespace NdEngSoft.InfraMongo.Repositorios
                 var ee = e;
             }
         }
-        public async Task<Pessoa> Buscar(string primeirNome)
+        public async Task<IList<Pessoa>> BuscarTodas()
+        {
+            try
+            {
+                return await _contextoBanco.Pessoas.Find(new BsonDocument()).ToListAsync();
+            }
+            catch (Exception e)
+            {
+                var ee = e;
+                return null;
+            }
+        }
+
+        public async Task<Pessoa> BuscarPorNome(string primeirNome)
         {
             try
             {
@@ -47,11 +60,13 @@ namespace NdEngSoft.InfraMongo.Repositorios
                 return null;
             }
         }
-        public async Task<IList<Pessoa>> BuscarTodas()
+        public async Task<Pessoa> BuscarPorId(string id)
         {
             try
             {
-                return await _contextoBanco.Pessoas.Find(new BsonDocument()).ToListAsync();
+                var construtor = Builders<Pessoa>.Filter;
+                var filtro = construtor.Eq(x => x.Id, id);
+                return await _contextoBanco.Pessoas.Find(filtro).FirstOrDefaultAsync();
             }
             catch (Exception e)
             {
@@ -59,6 +74,7 @@ namespace NdEngSoft.InfraMongo.Repositorios
                 return null;
             }
         }
+
         public async Task Remover(Pessoa pessoa)
         {
             try
@@ -87,6 +103,5 @@ namespace NdEngSoft.InfraMongo.Repositorios
             }
         }
 
-        
     }
 }

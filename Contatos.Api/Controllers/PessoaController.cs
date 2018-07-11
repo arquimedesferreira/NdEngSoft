@@ -2,6 +2,7 @@
 using Agenda.Dominio.Enum;
 using Agenda.Dominio.Interfaces.Repositorios;
 using Agenda.Dominio.ValoresDeObjetos;
+using Contatos.Api.Models.Pessoa;
 using NdEngSoft.InfraMongo.Contexto;
 using NdEngSoft.InfraMongo.Repositorios;
 using System;
@@ -12,6 +13,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Cors;
+
 
 namespace Contatos.Api.Controllers
 {
@@ -27,10 +29,6 @@ namespace Contatos.Api.Controllers
 
         }
 
-        
-
-        //Deve reotrna uma lista de pessoas em JSON
-        //public async Task<HttpResponseMessage> Pessoa()
         [HttpGet]
         [Route("api/v0/pessoa")]
         public async Task<HttpResponseMessage> Pessoa()
@@ -46,32 +44,16 @@ namespace Contatos.Api.Controllers
             }
         }
 
-        //Deve reotrna uma lista de pessoas em JSON
-        //public async Task<HttpResponseMessage> Pessoa()
-        [HttpPost]
-        [Route("api/v0/pessoa/{nome}")]
-        public HttpResponseMessage BuscarPessoaCom(string nome)
-        {
-            try
-            {
-               var pe = _repositorio.Buscar(nome);
-               return Request.CreateResponse(HttpStatusCode.OK, pe, "application/json");
-
-            }
-            catch (Exception)
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound, "Algo anconteceu , arquivo não encontrado!" + nome, "application/json");
-            }
-        }
-        //Deve reotrna uma lista de pessoas em JSON
-        //public async Task<HttpResponseMessage> Pessoa()
         [HttpPost]
         [Route("api/v0/pessoa/deletar/{id}")]
-        public HttpResponseMessage DeletarPessoaCom(string id)
+        public async Task<HttpResponseMessage> DeletarPessoaCom(string id)
         {
             try
             {
-                var resul = _repositorio.Remover(id);
+                var pessoa = await _repositorio.BuscarPorId(id);
+                if(pessoa==null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                var resul = _repositorio.Remover(pessoa);
                 return Request.CreateResponse(HttpStatusCode.OK, "application/json");
                 
             }
@@ -82,14 +64,16 @@ namespace Contatos.Api.Controllers
         }
 
         [HttpPost]
-        [Route("api/v0/pessoa/atualizar/{id}")]
-        public HttpResponseMessage AtualizarPessoaCom(string id)
+        [Route("api/v0/pessoa/atualizar")]
+        public async Task<HttpResponseMessage> AtualizarPessoaCom(PessoaModel  pessoa)
         {
 
+            var p = await _repositorio.BuscarPorId(pessoa.Id);
+            if (p == null)
+                return Request.CreateResponse(HttpStatusCode.NotFound);
             //return Request.CreateResponse(HttpStatusCode.OK, listaOrdenada, "application/json");
-            return Request.CreateResponse(HttpStatusCode.OK, "Atualizando uma pessoas de Id-" + id, "application/json");
+            return Request.CreateResponse(HttpStatusCode.OK, $"Pessoas de nome{p.Nome.PrimeiroNome} atualizada!", "application/json");
         }
-
 
         private void CarregarListadeTesteDePessoas()
         {

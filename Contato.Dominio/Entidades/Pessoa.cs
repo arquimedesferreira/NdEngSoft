@@ -13,7 +13,7 @@ namespace Agenda.Dominio.Entidades
         {
             this.Nome = nome;
             
-            Enderecos = new List<Endereco>();
+            this.Enderecos = new List<Endereco>();
             this.Contatos = new List<Contato>();
         }
 
