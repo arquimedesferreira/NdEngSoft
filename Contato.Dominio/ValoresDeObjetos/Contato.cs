@@ -1,8 +1,4 @@
 ﻿using Agenda.Dominio.Entidades;
-using Agenda.Dominio.Enum;
-using Flunt.Notifications;
-using Flunt.Validations;
-using System;
 
 namespace Agenda.Dominio.ValoresDeObjetos
 {
