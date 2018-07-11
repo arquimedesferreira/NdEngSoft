@@ -9,6 +9,8 @@ namespace Agenda.Domain.ValueObject
         public Address(string logradouro)
         {
             Logradouro = logradouro;
+            if (!string.IsNullOrEmpty(logradouro))
+                this.Logradouro = logradouro;
         }
 
         public string Logradouro { get; private set; }

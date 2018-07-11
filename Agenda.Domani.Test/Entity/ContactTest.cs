@@ -13,15 +13,16 @@ namespace Agenda.Domani.Test.Entity
         [TestMethod]
         public void TestaSeContatoPodeSerTipoNullo()
         {
-            var contato = new Contact(EContactType.CELULAR, "12312312");
-            Assert.IsTrue(contato.Type == 0);
+            var contact = new Contact(EContactType.CELULAR, "12312312");
+            Assert.IsTrue(contact.Type == 0);
         }
 
         [TestMethod]
         public void TesteSeContatoPodeTerValorVazio()
         {
-            var contato = new Contact(EContactType.EMAIL, "");
-            Assert.IsFalse(contato.Type == 3);
+            var contact = new Contact(EContactType.EMAIL, "");
+            var cValue = contact.Type;
+            Assert.IsFalse(cValue == 0);
         }
     }
 }

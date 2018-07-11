@@ -13,12 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="ValueObject\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Agenda.Domain\Agenda.Domain.csproj" />
+    <ProjectReference Include="..\NdEngSoft.InfraMongo\NdEngSoft.InfraMongo.csproj" />
+    <ProjectReference Include="..\NdEngSoft.Shared\NdEngSoft.Shared.csproj" />
   </ItemGroup>
 
 </Project>

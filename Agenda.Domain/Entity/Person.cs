@@ -21,19 +21,19 @@ namespace Agenda.Domain.Entity
         public ICollection<Address> Adresses { get; private set; }
         public ICollection<Contact> Contacts { get; private set; }
 
-        public void TrocarNome(Name name)
+        public void AlterName(Name name)
         {
             if (name != null)
                 this.Name = name;
         }
 
-        public void Adiciona(Address addres)
+        public void Add(Address addres)
         {
             if (addres != null)
                 Adresses.Add(addres);
         }
 
-        public void Adiciona(Contact contact)
+        public void Add(Contact contact)
         {
             if (contact != null)
                 Contacts.Add(contact);
