@@ -13,5 +13,18 @@ namespace Agenda.Portal.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Pesssoa()
+        {
+            return View("Pessoa");
+        }
+
+        [HttpGet]
+        public ActionResult Categoria()
+        {
+            return View("Categoria");
+        }
+        
     }
 }

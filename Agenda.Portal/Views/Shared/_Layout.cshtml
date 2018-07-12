@@ -20,7 +20,9 @@
                 @Html.ActionLink("# Agenda #", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Categorias", "Categoria", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Novo Contato", "Pesssoa", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
                 </ul>
             </div>
         </div>
