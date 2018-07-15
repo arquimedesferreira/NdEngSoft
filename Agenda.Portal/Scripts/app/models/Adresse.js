@@ -1,0 +1,6 @@
+﻿class Adress{
+    constructor(logradouro){
+
+    }
+
+}

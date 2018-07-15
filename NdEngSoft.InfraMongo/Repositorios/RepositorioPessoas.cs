@@ -89,7 +89,7 @@ namespace NdEngSoft.InfraMongo.Repositorios
             }
         }
 
-        public async void Update(Person pessoa)
+        public async Task Update(Person pessoa)
         {
             try
             {

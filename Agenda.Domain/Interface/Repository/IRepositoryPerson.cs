@@ -8,7 +8,7 @@ namespace Agenda.Domain.Interface.Repository
 {
     public interface IRepositoryPerson
     {
-        void Update(Person pessoa);
+        Task Update(Person pessoa);
         Task<Person> SearchForName(string primerName);
         Task<Person> SearchForId(string id);
         Task<IList<Person>> SearchAll();

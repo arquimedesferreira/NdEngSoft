@@ -1,0 +1,7 @@
+﻿class Contact {
+    constructor(value) {
+
+    }
+
+
+}

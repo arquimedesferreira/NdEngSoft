@@ -23,7 +23,7 @@ namespace Agenda.Api.Controllers
         {
             var context = new MongoContexto();
             _repository = new RepositorioPessoas(context);
-
+            //CarregarListadeTesteDePessoas();
         }
 
         [HttpGet]
@@ -64,15 +64,40 @@ namespace Agenda.Api.Controllers
         [Route("api/v0/pessoa/atualizar")]
         public async Task<HttpResponseMessage> AtualizarPessoaCom(PersonModel person)
         {
-
-            var p = await _repository.SearchForId(person.Id);
-            if (p == null)
+            try
+            {
+                var p = await _repository.SearchForId(person.Id);
+                if (p == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+                Person pUpdate = CreatPerson(person);
+                 _repository.Update(pUpdate);
+                return Request.CreateResponse(HttpStatusCode.OK, $"Pessoas {p.Name.FisrtName} atualizada!", "application/json");
+            }
+            catch (Exception)
+            {
                 return Request.CreateResponse(HttpStatusCode.NotFound);
-            //return Request.CreateResponse(HttpStatusCode.OK, listaOrdenada, "application/json");
-            return Request.CreateResponse(HttpStatusCode.OK, $"Pessoas de nome{p.Name.FisrtName} atualizada!", "application/json");
+            }
         }
 
-        private void CarregarListadeTesteDePessoas()
+        private Person CreatPerson(PersonModel person)
+        {
+            var name = new Name(person.Name.FisrtName, person.Name.NextName);
+
+            var pUpdate = new Person(name);
+            pUpdate.AlterId(person.Id);
+            foreach (var adress in person.Adresses)
+            {
+                pUpdate.Add(adress);
+            }
+            foreach (var contato in person.Contacts)
+            {
+                pUpdate.Add(contato);
+            }
+
+            return pUpdate;
+        }
+
+        private async void CarregarListadeTesteDePessoas()
         {
             var n = new Name("Carlos", "Anderson");
             var p = new Person(n);
@@ -95,8 +120,8 @@ namespace Agenda.Api.Controllers
             p1.Add(cc1);
             try
             {
-                _repository.Add(p);
-                _repository.Add(p1);
+               await _repository.Add(p);
+               await _repository.Add(p1);
             }
             catch (Exception er)
             {

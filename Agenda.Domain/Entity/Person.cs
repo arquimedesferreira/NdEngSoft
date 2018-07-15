@@ -21,6 +21,12 @@ namespace Agenda.Domain.Entity
         public ICollection<Address> Adresses { get; private set; }
         public ICollection<Contact> Contacts { get; private set; }
 
+
+        public void AlterId(string id)
+        {
+            if (!string.IsNullOrEmpty(id))
+                this.Id = id;
+        }
         public void AlterName(Name name)
         {
             if (name != null)
