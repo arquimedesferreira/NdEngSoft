@@ -102,6 +102,8 @@
     <Content Include="Scripts\app\models\MarcadorContato.js" />
     <Content Include="Scripts\app\models\Pessoa.js" />
     <Content Include="Scripts\app\models\TipoContato.js" />
+    <Content Include="Scripts\app\services\ConsultarService.js" />
+    <Content Include="Scripts\app\views\TabelaPessoasView.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -141,8 +143,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\app\helpers\" />
-    <Folder Include="Scripts\app\services\" />
-    <Folder Include="Scripts\app\views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
